@@ -1,0 +1,133 @@
+.Ejemplo {
+	text-align: center;
+  }
+
+  .Ejemplo-image {
+	width: 130px;
+	height: 130px;
+	border-radius: 100%;
+  }
+
+  .Ejemplo-list {
+	border-left: 2px solid black;
+  }
+
+ul {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 70%;
+	width: 85%;
+}
+
+  li {
+	text-align: center;
+	list-style-type: none;
+  }
+
+  .Ejemplo-columns {
+	width: 50%;
+	float: left;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	background-color: rgb(238, 238, 238);
+	height: 55vh;
+  }
+
+.Ejemplo-button {
+  appearance: none;
+  background-color: black;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 10px;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 30%;
+  will-change: transform;
+}
+
+.Ejemplo-button:disabled {
+  pointer-events: none;
+}
+
+.Ejemplo-button:hover {
+  color: black;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.Ejemplo-button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+  textarea {
+	width: 70%;
+	height: 60%;
+	border-radius: 5px;
+	padding: 15px 15px;
+	text-align: justify;
+	resize: none;
+  }
+
+  .Ejemplo-form {
+	background-color: rgb(251, 251, 251);
+	width: 40%;
+	float: left;
+	height: 100vh;
+  }
+
+  .Ejemplo-data {
+	background-color: rgb(238, 238, 238);
+	width: 60%;
+	float: left;
+	height: 80vh;
+  }
+
+  .Ejemplo-user {
+	background-color: rgb(238, 238, 238);
+	width: 60%;
+	float: left;
+	height: 20vh;
+  }
+
+  .Ejemplo-logo {
+	height: 40vmin;
+	pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+	.Ejemplo-logo {
+	  animation: Ejemplo-logo-spin infinite 20s linear;
+	}
+  }
+  
+  .Ejemplo-link {
+	color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+	from {
+	  transform: rotate(0deg);
+	}
+	to {
+	  transform: rotate(360deg);
+	}
+  }
+  
