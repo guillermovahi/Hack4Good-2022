@@ -37,6 +37,11 @@
   },
   "devDependencies": {
     "@nomiclabs/hardhat-waffle": "^2.0.3",
-    "ethereum-waffle": "^3.4.4"
+    "ethereum-waffle": "^3.4.4",
+    "ipfs-car": "^0.9.1",
+    "jimp": "^0.16.2",
+    "minimist": "^1.2.7",
+    "tiff-to-png": "^2.0.2",
+    "web3.storage": "^4.4.0"
   }
 }

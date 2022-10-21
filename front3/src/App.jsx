@@ -1,9 +1,7 @@
-
-
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import  abi  from "./utils/patients.json";
+import abi from "./utils/patients.json";
 
 //import ipfsProvider from "./utils/uploadFiles.js";
 
@@ -15,6 +13,27 @@ export default function Home() {
   const contractAddress = CONTRACT_ADDRESS;
   const contractABI = abi.abi;
   const [currentAccount, setCurrentAccount] = useState("");
+  const [hospital, setHospital] = useState("");
+  const [doctor, setDoctor] = useState("");
+  const [cipa, setCipa] = useState("");
+  const [cid, setCid] = useState("");
+
+  const onHospitalAddressChange = (event) => {
+    setHospital(event.target.value);
+  }
+  
+  const onDoctorAddressChange = (event) => {
+    setDoctor(event.target.value);
+  }
+
+  const onCipaChange = (event) => {
+    setCipa(event.target.value);
+  }
+
+  const onCidChange = (event) => {
+    setCid(event.target.value);
+  }
+  
 
   const isWalletConnected = async () => {
     try {
@@ -54,20 +73,21 @@ export default function Home() {
 
   const addHospital = async () => {
     try {
-	console.log("Adding hospital to contract...");
+      console.log("Adding hospital to contract...");
       const { ethereum } = window;
       if (ethereum) {
-		  const provider = new ethers.providers.Web3Provider(ethereum, "any");
-		  const signer = provider.getSigner();
-		  const patientContract = new ethers.Contract(
-			  contractAddress,
-			  contractABI,
-			  signer
-			  );
-        const hospitalTxn = await patientContract.addHospital(HOSPITAL1);
+        const provider = new ethers.providers.Web3Provider(ethereum, "any");
+        const signer = provider.getSigner();
+        const patientContract = new ethers.Contract(
+          contractAddress,
+          contractABI,
+          signer
+        );
+		console.log(`The addres I am trying to add is -> ${hospital}`)
+        const hospitalTxn = await patientContract.addHospital(hospital);
+		console.log("I am deploying your transaction, wait just a moment...")
         await hospitalTxn.wait();
         console.log("Hospital added in tx: ", hospitalTxn.hash);
-
       }
     } catch (error) {
       console.log(error);
@@ -76,17 +96,19 @@ export default function Home() {
 
   const addDoctor = async () => {
     try {
-	console.log("Adding doctor to hospital...");
+      console.log("Adding doctor to hospital...");
       const { ethereum } = window;
       if (ethereum) {
-		  const provider = new ethers.providers.Web3Provider(ethereum, "any");
-		  const signer = provider.getSigner();
-		  const patientContract = new ethers.Contract(
-			  contractAddress,
-			  contractABI,
-			  signer
-			  );
-        const hospitalTxn = await patientContract.addDoctor(DOCTOR2);
+        const provider = new ethers.providers.Web3Provider(ethereum, "any");
+        const signer = provider.getSigner();
+        const patientContract = new ethers.Contract(
+          contractAddress,
+          contractABI,
+          signer
+        );
+		console.log(`The addres I am trying to add is -> ${doctor}`)
+        const hospitalTxn = await patientContract.addDoctor(doctor);
+		console.log("I am deploying your transaction, wait just a moment...")
         await hospitalTxn.wait();
         console.log("Doctor added in tx: ", hospitalTxn.hash);
       }
@@ -97,19 +119,22 @@ export default function Home() {
 
   const addFile = async () => {
     try {
-	console.log("Adding file to patient...");
+      console.log("Adding file to patient...");
       const { ethereum } = window;
       if (ethereum) {
-		  const provider = new ethers.providers.Web3Provider(ethereum, "any");
-		  const signer = provider.getSigner();
-		  const patientContract = new ethers.Contract(
-			  contractAddress,
-			  contractABI,
-			  signer
-			  );
-        const hospitalTxn = await patientContract.addFile(1234, "dasd");
+        const provider = new ethers.providers.Web3Provider(ethereum, "any");
+        const signer = provider.getSigner();
+        const patientContract = new ethers.Contract(
+          contractAddress,
+          contractABI,
+          signer
+        );
+		console.log(`The cipa I am trying to add is -> ${cipa}`)
+		console.log(`The cid I am trying to add is -> ${cid}`)
+        const hospitalTxn = await patientContract.addFile(cipa, cid);
+		console.log("I am deploying your transaction, wait just a moment...")
         await hospitalTxn.wait();
-        console.log("Doctor added in tx: ", hospitalTxn.hash);
+        console.log("File added in tx: ", hospitalTxn.hash);
       }
     } catch (error) {
       console.log(error);
@@ -129,12 +154,18 @@ export default function Home() {
         <button type="button" className="add-button" onClick={addHospital}>
           Add Hospital
         </button>
+        <input id="hospitalAddress" type="text" className="input-holder" placeholder="Hospital Address" onChange={onHospitalAddressChange}/> <br></br>
         <button type="button" className="add-button" onClick={addDoctor}>
           Add Doctor
         </button>
-        <button type="button" className="add-button">
+		<input id="doctorAddress" type="text" className="input-holder" placeholder="Doctor Address" onChange={onDoctorAddressChange}/> <br></br>
+        <button type="button" className="add-button" onClick={addFile}>
           Add File to patient
         </button>
+		<input id="cipa" type="text" className="input-holder" placeholder="CIPA" onChange={onCipaChange}/>
+		<input id="cid" type="text" className="input-holder"placeholder="CID" onChange={onCidChange}/> <br></br>
+
+
 
         <button className="App-button" onClick={connectWallet}>
           {" "}
