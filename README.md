@@ -13,8 +13,20 @@
 - Jaime
 - Mak
 
----> documentación del blog ethereum & IPFS 
-https://sebinatx.medium.com/building-a-fully-decentralized-user-profile-dapp-on-ethereum-and-ipfs-e55afac35718
+### Instrucciones para presentar y entregar las cosas
 
---->  Lector QR
+#### A entregar
+- video 1-2 min
+- enlace a github ver que licencia darle
+- presentación 
+
+#### Presentación sabado 15:00
+- 3 min de charla mañana sabado
+	- creatividad
+	- impacto social 
+	- evolucion del trabajo
+
+
+### Lector QR
 https://github.com/react-qr-reader/react-qr-reader#readme
+
