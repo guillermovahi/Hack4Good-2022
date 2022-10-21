@@ -2,9 +2,9 @@
 pragma solidity ^0.8.0;
 
 // aqui van CID con la CIPA
-import "./hospitalRoles.sol";
+import "./service.sol";
 
-contract pacientes is hospitales {
+contract patients is service {
     //address payable owner;
     // mapa con los cipas que contiene todos los cids
     // uint256 es cipa, array(string) de cids
@@ -18,7 +18,7 @@ contract pacientes is hospitales {
     //add file
     function addFile(uint256 _cipa, string memory _cid) public {
         require(
-            getMedico(msg.sender) == 1,
+            getDoctor(msg.sender) == 1,
             "Only authorized doctor can add file"
         );
         files[_cipa].push(_cid);

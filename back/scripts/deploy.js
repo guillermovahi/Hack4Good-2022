@@ -1,10 +1,11 @@
 const hre = require("hardhat");
 
 async function main() {
-  const Pacientes = await hre.ethers.getContractFactory("pacientes");
-  const pacientes = await Pacientes.deploy();
-  await pacientes.deployed();
-  console.log("Pacientes deployed to: ", pacientes.address);
+  const Patients = await hre.ethers.getContractFactory("patients");
+  const patients = await Patients.deploy();
+  await patients.deployed();
+  console.log("Pacientes deployed to: ", patients.address);
+  
 }
 
 main()
