@@ -24,7 +24,7 @@ async function main() {
     const contracto = new web3.eth.Contract(contract.abi, CONTRACT_ADDRESS);
    
 	//* AÑADIMOS UN HOSPITAL AL MAPPING
-	/* console.log("Trying to add Hospital...")
+	console.log("Trying to add Hospital...")
 	const result = await contracto.methods.addHospital(HOSPITAL1).send({from: signerService.address, gas: 1000000});
 	console.log("Hospital added! look in tx: ", result.transactionHash);
 
@@ -35,7 +35,7 @@ async function main() {
     web3.eth.accounts.wallet.add(signerHospital);
     //web3.eth.defaultAccount = signerHospital.address;
     result = await contracto.methods.addDoctor(MEDICO1).send({from: signerHospital.address, gas: 1000000});
-	console.log("Doctor added! look in tx: ", result.transactionHash); */
+	console.log("Doctor added! look in tx: ", result.transactionHash);
 	
 
 	//* AÑADIMOS UN PACIENTE AL MAPPING CON SU CIPA Y EL CID DE SU INFORME
@@ -45,7 +45,7 @@ async function main() {
 	//web3.eth.defaultAccount = signerDoctor.address;
 	const newCID = await ipfsProvider.write("./scripts/file2.txt");
 	const cipa = 123456789;
-	const result = await contracto.methods.addFile(cipa, newCID).send({from: signerDoctor.address, gas: 1000000});
+	result = await contracto.methods.addFile(cipa, newCID).send({from: signerDoctor.address, gas: 1000000});
 	console.log("Patient added! look in tx: ", result.transactionHash);
 
 	//* OBTENEMOS TODOS LOS INFORMES (CID) DE UN PACIENTE

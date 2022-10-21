@@ -1,5 +1,9 @@
 const hre = require("hardhat");
 
+/*
+* Fichero que despliega el contrato llamado "patients"
+*/
+
 async function main() {
   const Patients = await hre.ethers.getContractFactory("patients");
   const patients = await Patients.deploy();
