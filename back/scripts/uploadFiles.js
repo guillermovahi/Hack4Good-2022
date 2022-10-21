@@ -16,10 +16,8 @@ function makeStorageClient() { return new Web3Storage({ token: WEB3_STORAGE_TOKE
 async function write(file) {
   var car = await packToFs({
     input: file,
-   // output: `${process.cwd()}consultas.car`,
     blockstore: new FsBlockStore()
   });
- /*  storeCarFile(car.filename) */
   const inStream = createReadStream(car.filename)
   const car2 = await CarReader.fromIterable(inStream)
   const client = makeStorageClient()
@@ -32,4 +30,4 @@ async function main() {
   write("./scripts/file.txt");
 }
 
-module.exports = {write};
+module.exports = { write };

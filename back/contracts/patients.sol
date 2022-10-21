@@ -21,6 +21,12 @@ contract patients is service {
             getDoctor(msg.sender) == 1,
             "Only authorized doctor can add file"
         );
+		for (uint256 i = 0; i < files[_cipa].length; i++) {
+            if (keccak256(abi.encodePacked(files[_cipa][i])) ==
+                keccak256(abi.encodePacked(_cid))) {
+                revert("File already exists");
+            }
+        }
         files[_cipa].push(_cid);
     }
 
