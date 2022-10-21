@@ -11,6 +11,7 @@
     "hardhat-waffle": "^0.0.1-security",
     "jimp": "^0.16.0",
     "minimist": "^1.2.5",
+    "mysql": "^2.18.1",
     "tiff-to-png": "^2.0.2",
     "web3.storage": "^3.5.1"
   }
