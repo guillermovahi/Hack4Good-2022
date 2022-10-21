@@ -1,4 +1,9 @@
 body {
+  height: 100%;
+  background-image: url("https://c0.wallpaperflare.com/preview/231/340/876/citiscan-result-hand-ok.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
