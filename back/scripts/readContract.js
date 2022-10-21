@@ -43,7 +43,7 @@ async function main() {
 	const signerDoctor = web3.eth.accounts.privateKeyToAccount(PRIVATE_KEY_DOCTOR);
 	web3.eth.accounts.wallet.add(signerDoctor);
 	//web3.eth.defaultAccount = signerDoctor.address;
-	const newCID = await ipfsProvider.write("./scripts/file2.txt");
+	const newCID = await ipfsProvider.write("./scripts/file.txt");
 	const cipa = 123456789;
 	result = await contracto.methods.addFile(cipa, newCID).send({from: signerDoctor.address, gas: 1000000});
 	console.log("Patient added! look in tx: ", result.transactionHash);
