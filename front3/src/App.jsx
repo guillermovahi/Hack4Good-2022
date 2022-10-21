@@ -5,8 +5,11 @@ import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import  abi  from "./utils/patients.json";
 
+//import ipfsProvider from "./utils/uploadFiles.js";
+
 const CONTRACT_ADDRESS = "0x5313884f9b46CD5098A320a00DB1C80DF2B77Eb1";
 const HOSPITAL1 = "0x7d26600E22c2d7ed433D1deEBA73160bb629CbE9";
+const DOCTOR2 = "0xc62d51c341BB6EA6F7c3C006539Dad033B05930a";
 
 export default function Home() {
   const contractAddress = CONTRACT_ADDRESS;
@@ -51,30 +54,62 @@ export default function Home() {
 
   const addHospital = async () => {
     try {
-		console.log("Adding hospital to contract...");
+	console.log("Adding hospital to contract...");
       const { ethereum } = window;
-	  console.log("1");
-
       if (ethereum) {
-		  
 		  const provider = new ethers.providers.Web3Provider(ethereum, "any");
 		  const signer = provider.getSigner();
-		  console.log("2");
-		  console.log("contractAddress: ", contractAddress);
-		  console.log("contractABI: ", contractABI);
-		  console.log("signer: ", signer);
 		  const patientContract = new ethers.Contract(
 			  contractAddress,
 			  contractABI,
 			  signer
 			  );
-
         const hospitalTxn = await patientContract.addHospital(HOSPITAL1);
-
         await hospitalTxn.wait();
+        console.log("Hospital added in tx: ", hospitalTxn.hash);
 
-        console.log("mined ", hospitalTxn.hash);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+  const addDoctor = async () => {
+    try {
+	console.log("Adding doctor to hospital...");
+      const { ethereum } = window;
+      if (ethereum) {
+		  const provider = new ethers.providers.Web3Provider(ethereum, "any");
+		  const signer = provider.getSigner();
+		  const patientContract = new ethers.Contract(
+			  contractAddress,
+			  contractABI,
+			  signer
+			  );
+        const hospitalTxn = await patientContract.addDoctor(DOCTOR2);
+        await hospitalTxn.wait();
+        console.log("Doctor added in tx: ", hospitalTxn.hash);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const addFile = async () => {
+    try {
+	console.log("Adding file to patient...");
+      const { ethereum } = window;
+      if (ethereum) {
+		  const provider = new ethers.providers.Web3Provider(ethereum, "any");
+		  const signer = provider.getSigner();
+		  const patientContract = new ethers.Contract(
+			  contractAddress,
+			  contractABI,
+			  signer
+			  );
+        const hospitalTxn = await patientContract.addFile(1234, "dasd");
+        await hospitalTxn.wait();
+        console.log("Doctor added in tx: ", hospitalTxn.hash);
       }
     } catch (error) {
       console.log(error);
@@ -94,7 +129,7 @@ export default function Home() {
         <button type="button" className="add-button" onClick={addHospital}>
           Add Hospital
         </button>
-        <button type="button" className="add-button">
+        <button type="button" className="add-button" onClick={addDoctor}>
           Add Doctor
         </button>
         <button type="button" className="add-button">
