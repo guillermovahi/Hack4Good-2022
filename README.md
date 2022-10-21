@@ -1,6 +1,9 @@
 # Grupo Madrid 04
 
-Team:
+## Fundadores:
+![No funciona la foto](https://bafybeibbryjmpnjms2znvixctvzgimenrqrhntuiy2cfrjgmzkpvw6bhmy.ipfs.nftstorage.link/)
+
+## Team:
 - Javi
 - Manu
 - Lucía
@@ -9,9 +12,6 @@ Team:
 - Tono
 - Jaime
 - Mak
-
-Fundadores:
-![No funciona la foto](https://bafybeibbryjmpnjms2znvixctvzgimenrqrhntuiy2cfrjgmzkpvw6bhmy.ipfs.nftstorage.link/)
 
 ---> documentación del blog ethereum & IPFS 
 https://sebinatx.medium.com/building-a-fully-decentralized-user-profile-dapp-on-ethereum-and-ipfs-e55afac35718
