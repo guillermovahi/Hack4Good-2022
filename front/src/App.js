@@ -1,22 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
+import MetaMaskLoginButton from 'react-metamask-login-button';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div class="card-body">
+          <h4 class="card-title">
+            Basic Actions
+          </h4>
+          <MetaMaskLoginButton />
+          <button class="btn btn-primary btn-lg btn-block mb-3" id="connectButton">Connect</button>
+
+        </div>
         <p>
-          El principio de algo grande
+          Arrestan a Little Manu por desorden publico en Parla.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
