@@ -32,4 +32,4 @@ async function main() {
   write("./scripts/file.txt");
 }
 
-main();
+module.exports = {write};
