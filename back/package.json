@@ -9,6 +9,7 @@
     "dotenv": "^16.0.3",
     "hardhat-ethers": "^1.0.1",
     "hardhat-waffle": "^0.0.1-security",
+    "ipfs-car": "^0.9.1",
     "jimp": "^0.16.0",
     "minimist": "^1.2.5",
     "mysql": "^2.18.1",
