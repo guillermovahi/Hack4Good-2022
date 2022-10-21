@@ -15,3 +15,6 @@
 
 ---> documentación del blog ethereum & IPFS 
 https://sebinatx.medium.com/building-a-fully-decentralized-user-profile-dapp-on-ethereum-and-ipfs-e55afac35718
+
+--->  Lector QR
+https://github.com/react-qr-reader/react-qr-reader#readme
