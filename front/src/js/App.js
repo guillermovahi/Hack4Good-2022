@@ -1,4 +1,4 @@
-import './App.css';
+import '../css/App.css';
 import MetaMaskLoginButton from 'react-metamask-login-button';
 function App() {
   return (
@@ -9,12 +9,7 @@ function App() {
             Basic Actions
           </h4>
           <MetaMaskLoginButton />
-          <button class="btn btn-primary btn-lg btn-block mb-3" id="connectButton">Connect</button>
-
-        </div>
-        <p>
-          Arrestan a Little Manu por desorden publico en Parla.
-        </p>
+		</div>
       </header>
     </div>
   );
