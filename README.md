@@ -15,6 +15,9 @@
 
 ### Instrucciones para presentar y entregar las cosas
 
+### Video demostración
+https://youtu.be/Nnc-JmorzqU
+
 #### A entregar
 - video 1-2 min
 - enlace a github ver que licencia darle
