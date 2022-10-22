@@ -148,10 +148,18 @@ export default function Home() {
   //	function App() {
   return (
     <div className="App">
-      <h1>42 BLOCKERS - Admin</h1>
+		<div className="header-connect">
+		<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Admin Panel</h1>
+        
+		<button className="App-button" onClick={connectWallet}>
+			<img src={require('./metamask.png')}/>&nbsp;
+			Connect with Metamask
+			</button>
 
+		</div>
       <main className="App-header">
-        <button type="button" className="add-button" onClick={addHospital}>
+        <button type="button" className="App-button-big" onClick={addHospital}>
           Add Hospital
         </button>
         <input id="hospitalAddress" type="text" className="input-holder" placeholder="Hospital Address" onChange={onHospitalAddressChange}/> <br></br>
@@ -167,10 +175,7 @@ export default function Home() {
  */}
 
 
-        <button className="App-button" onClick={connectWallet}>
-          {" "}
-          Connect your wallet on Mumbai Testnet
-        </button>
+        
       </main>
       <footer>
         <h1>
