@@ -5,7 +5,7 @@ import abi from "./utils/patients.json";
 
 //import ipfsProvider from "./utils/uploadFiles.js";
 
-const CONTRACT_ADDRESS = "0x5313884f9b46CD5098A320a00DB1C80DF2B77Eb1";
+const CONTRACT_ADDRESS = "0x13BE81E939EC473065B39c915a5f3392Ac1288dc";
 const HOSPITAL1 = "0x7d26600E22c2d7ed433D1deEBA73160bb629CbE9";
 const DOCTOR2 = "0xc62d51c341BB6EA6F7c3C006539Dad033B05930a";
 
@@ -148,14 +148,21 @@ export default function Home() {
   //	function App() {
   return (
     <div className="App">
-      <h1>42 BLOCKERS - Hospital</h1>
+	<div className="header-connect">
 
+      <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hospital Panel</h1>
+		<button className="App-button" onClick={connectWallet}>
+			<img src={require('./metamask.png')}/>&nbsp;
+			Connect with Metamask
+			</button>
+	</div>
       <main className="App-header">
        {/*  <button type="button" className="add-button" onClick={addHospital}>
           Add Hospital
         </button> 
         <input id="hospitalAddress" type="text" className="input-holder" placeholder="Hospital Address" onChange={onHospitalAddressChange}/> <br></br>
-         */}<button type="button" className="add-button" onClick={addDoctor}>
+         */}<button type="button" className="App-button-big" onClick={addDoctor}>
           Add Doctor
         </button>
 		<input id="doctorAddress" type="text" className="input-holder" placeholder="Doctor Address" onChange={onDoctorAddressChange}/> <br></br>
@@ -166,11 +173,6 @@ export default function Home() {
 		<input id="cid" type="text" className="input-holder"placeholder="CID" onChange={onCidChange}/> <br></br>
  */}
 
-
-        <button className="App-button" onClick={connectWallet}>
-          {" "}
-          Connect your wallet on Mumbai Testnet
-        </button>
       </main>
       <footer>
         <h1>

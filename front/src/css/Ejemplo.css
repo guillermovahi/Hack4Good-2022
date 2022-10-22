@@ -39,14 +39,14 @@ ul {
   border: 2px solid #1A1A1A;
   border-radius: 15px;
   box-sizing: border-box;
-  color: white;
+  color: rgb(238, 238, 238);
   cursor: pointer;
   display: inline-block;
   font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
-  margin: 10px;
+  margin: 30px;
   min-height: 60px;
   min-width: 0;
   outline: none;
@@ -57,7 +57,7 @@ ul {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 30%;
+  width: 80%;
   will-change: transform;
 }
 
@@ -97,7 +97,7 @@ ul {
 	background-color: rgb(238, 238, 238);
 	width: 60%;
 	float: left;
-	height: 80vh;
+	height: 0vh;
   }
 
   .Ejemplo-user {

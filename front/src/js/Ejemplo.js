@@ -1,11 +1,38 @@
 import '../css/Ejemplo.css';
-function Ejemplo() {
+import React, { useEffect, useState } from "react";
+import { ethers } from "ethers";
+import abi from "../utils/patients.json";
 
-	function popUp() {
-		var popup = document.getElementById("/Users/cx02860/Documents/Github/Hack4Good-2022/qr.png");
-		popup.classList.toggle("show");
-		//window.open("https://www.codigos-qr.com/qr/php/qr_img.php?d=Se%20ha%20accedido%20correctamente%20al%20historial%20m%C3%A9dico%20del%20paciente%20con%20CIPA%20654643564.&s=8&e=", 'Nombre de la ventana', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=1,width=300,height=200,left = 390,top = 50');
-    }
+function Ejemplo() {
+	const contractAddress = "0x13BE81E939EC473065B39c915a5f3392Ac1288dc";
+  	const contractABI = abi.abi;
+	const addFile = async () => {
+		try {
+		  console.log("Adding file to patient...");
+		  const { ethereum } = window;
+		  if (ethereum) {
+			const provider = new ethers.providers.Web3Provider(ethereum, "any");
+			const signer = provider.getSigner();
+			const patientContract = new ethers.Contract(
+			  contractAddress,
+			  contractABI,
+			  signer
+			);
+			
+			const cipa = 654643564;
+			const cid = "bafybeigvtutchyr74bgac7kzz5ojk63sh66hvmcrulkcgpjk44hpdrfe3u";
+			console.log(`The cipa I am trying to add is -> ${cipa}`)
+			console.log(`The cid I am trying to add is -> ${cid}`)
+			const hospitalTxn = await patientContract.addFile(cipa, cid);
+			console.log("I am deploying your transaction, wait just a moment...")
+			await hospitalTxn.wait();
+			console.log("File added in tx: ", hospitalTxn.hash);
+		  }
+		} catch (error) {
+		  console.log(error);
+		}
+	  };
+	
   return (
 
 	<div class="Ejemplo">
@@ -19,30 +46,33 @@ function Ejemplo() {
 		<vl/>
 		<div class="Ejemplo-user">
 			<h2>Médico - 980752982754372</h2>
-			<img src='https://cdn.intra.42.fr/users/tvillare.jpeg' class='Ejemplo-image'></img>
+			<img src='https://bafybeigvtutchyr74bgac7kzz5ojk63sh66hvmcrulkcgpjk44hpdrfe3u.ipfs.nftstorage.link/' class='Ejemplo-image'></img>
 		</div>
 		<div class="Ejemplo-data">
-			<h2>Datos</h2>
-			
-			<button type="submit" class="Ejemplo-button" onClick={popUp()}>Escanear QR CIPA </button>
-			<button type="submit" class="Ejemplo-button">Alta paciente</button>
+			<p> </p>
+			<p> </p>
+			<p> </p>
+
+{/* 			<button type="submit" class="Ejemplo-button" onClick={popUp()}>Escanear QR CIPA </button>
+ */}			<button type="submit" class="Ejemplo-button" onClick={addFile}>Alta paciente</button>
 			<div class="Ejemplo-columns">
 				<h2>Lista informes</h2>
 				<ul>
-					<li>Hola.txt</li>
-					<li>Hola.txt</li>
-					<li>Hola.txt</li>
-					<li>Hola.txt</li>
+					<li>Analítica(10-07-2022).pdf</li>
+					<li>Informe patologías médicas(30-01-2007).pdf</li>
+					<li>Ecografía #1(02-05-2000).pdf</li>
+					<li>Recetas/Reconocimiento(29-03-1990).pdf</li>
+					<li>Consulta general(22-10-2022).pdf</li>
 				</ul>
 			</div>
 			<div class="Ejemplo-columns">
 				<h2>Lista CIDs</h2>
 				<ul class="Ejemplo-list">
-					<li>Hola.txt</li>
-					<li>Hola.txt</li>
-					<li>Hola.txt</li>
-					<li>Hola.txt</li>
-					<li>Hola.txt</li>
+				<li><a href="https://bafybeihjm6rkrwklnbdnhjnmj5gj4regtaamhadp4sr2nju7uxoo53n5my.ipfs.nftstorage.link/informes/Anal%C3%ADtica(10-07-2022).pdf">bafybeihjm6rk....</a>	</li>
+					<li><a href="https://bafybeihjm6rkrwklnbdnhjnmj5gj4regtaamhadp4sr2nju7uxoo53n5my.ipfs.nftstorage.link/informes/Informe%20patolog%C3%ADas%20m%C3%A9dicas(30-01-2007).pdf">bafyjqg24vn13....</a>	</li>
+					<li><a href="https://bafybeihjm6rkrwklnbdnhjnmj5gj4regtaamhadp4sr2nju7uxoo53n5my.ipfs.nftstorage.link/informes/Anal%C3%ADtica(10-07-2022).pdf">bafyu2i7std6rk....</a>	</li>
+					<li><a href="https://bafybeihjm6rkrwklnbdnhjnmj5gj4regtaamhadp4sr2nju7uxoo53n5my.ipfs.nftstorage.link/informes/Anal%C3%ADtica(10-07-2022).pdf">bafyn29yssv2s....</a>	</li>
+					<li><a href="https://bafybeihjm6rkrwklnbdnhjnmj5gj4regtaamhadp4sr2nju7uxoo53n5my.ipfs.nftstorage.link/informes/Anal%C3%ADtica(10-07-2022).pdf">bafyn21sadw1k....</a>	</li>
 				</ul>
 			</div>
 		</div>
