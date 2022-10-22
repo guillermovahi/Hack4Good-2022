@@ -6,7 +6,7 @@ function App() {
       <header className="App-header">
         <div class="card-body">
           <h4 class="card-title">
-            Basic Actions
+            Inicie sesión para poder continuar
           </h4>
           <MetaMaskLoginButton />
 		</div>
