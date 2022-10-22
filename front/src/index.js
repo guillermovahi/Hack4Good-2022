@@ -6,8 +6,8 @@ import Ejemplo from './js/Ejemplo';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const root1 = ReactDOM.createRoot(document.getElementById('mainPageLogged'));
-
+const root1 = ReactDOM.createRoot(document.getElementById('middle'));
+const root2 = ReactDOM.createRoot(document.getElementById('mainPageLogged'));
 root.render(
   <React.StrictMode>
     <App />
