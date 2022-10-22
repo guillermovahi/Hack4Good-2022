@@ -5,7 +5,7 @@ import abi from "./utils/patients.json";
 
 //import ipfsProvider from "./utils/uploadFiles.js";
 
-const CONTRACT_ADDRESS = "0x5313884f9b46CD5098A320a00DB1C80DF2B77Eb1";
+const CONTRACT_ADDRESS = "0x13BE81E939EC473065B39c915a5f3392Ac1288dc";
 const HOSPITAL1 = "0x7d26600E22c2d7ed433D1deEBA73160bb629CbE9";
 const DOCTOR2 = "0xc62d51c341BB6EA6F7c3C006539Dad033B05930a";
 
