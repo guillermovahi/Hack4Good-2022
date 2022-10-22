@@ -148,18 +148,18 @@ export default function Home() {
   //	function App() {
   return (
     <div className="App">
-      <h1>42 BLOCKERS - Admin</h1>
+      <h1>42 BLOCKERS - Hospital</h1>
 
       <main className="App-header">
-        <button type="button" className="add-button" onClick={addHospital}>
+       {/*  <button type="button" className="add-button" onClick={addHospital}>
           Add Hospital
-        </button>
+        </button> 
         <input id="hospitalAddress" type="text" className="input-holder" placeholder="Hospital Address" onChange={onHospitalAddressChange}/> <br></br>
-       {/*  <button type="button" className="add-button" onClick={addDoctor}>
+         */}<button type="button" className="add-button" onClick={addDoctor}>
           Add Doctor
         </button>
 		<input id="doctorAddress" type="text" className="input-holder" placeholder="Doctor Address" onChange={onDoctorAddressChange}/> <br></br>
-        <button type="button" className="add-button" onClick={addFile}>
+        {/* <button type="button" className="add-button" onClick={addFile}>
           Add File to patient
         </button>
 		<input id="cipa" type="text" className="input-holder" placeholder="CIPA" onChange={onCipaChange}/>
