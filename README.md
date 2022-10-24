@@ -13,8 +13,8 @@ Work done in the Hackathon Hack4Good, where we put solution to the lack of synch
 - Lucía
 - Guille
 - Víctor
-- Tono
 - Jaime
+- Tono
 - Mak
 
 ### Instrucciones para presentar y entregar las cosas
